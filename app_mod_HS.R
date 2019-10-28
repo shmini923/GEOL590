@@ -16,7 +16,7 @@ ui <- fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-            
+            selectInput('x', 'X', choices = nms, selected = "carat"),
             # This is a range slider (i.e. there's a max and min). It is set that way by "value" (the starting value), which is a 2-element vector
             sliderInput("mpg.adjuster",
                         "mpg",
