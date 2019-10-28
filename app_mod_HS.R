@@ -16,7 +16,7 @@ ui <- fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-            selectInput('x', 'X', choices = nms, selected = "carat"),
+            selectInput('x', 'X', choices = nms, selected = "mpg"),
             # This is a range slider (i.e. there's a max and min). It is set that way by "value" (the starting value), which is a 2-element vector
             sliderInput("mpg.adjuster",
                         "mpg",
@@ -47,7 +47,7 @@ server <- function(input, output) {
     })
     
     output$mtcars_plot <- renderPlot({
-       ggplot(d_filt(), aes_string(x = "mpg", y = "hp", color = "wt")) +
+       ggplot(d_filt(), aes_string(x = "x", y = "hp", color = "wt")) +
                   geom_point()
        })
 }
